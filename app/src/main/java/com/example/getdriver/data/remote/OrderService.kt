@@ -26,6 +26,6 @@ interface OrderService {
     suspend fun addOrder(@Body blog: Orders):ApiResponse<OrderList>
 
     @Multipart
-    @POST("/remont/upload")
+    @POST("/order/upload")
     suspend fun postImage(@Part image: MultipartBody.Part): ApiResponse<OrderList>
 }
