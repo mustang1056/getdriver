@@ -22,11 +22,6 @@ class OrdersViewModel @Inject constructor(
     private val db: AppDatabase
 ) : ViewModel() {
     lateinit var clickedItem: Orders
-    /*
-    val movies: Flow<PagingData<Remont>> = Pager(PagingConfig(pageSize = 10),) {
-        RemontSource(mainRepository)
-    }.flow
-     */
 
     @ExperimentalPagingApi
     val orders: Flow<PagingData<Orders>> =  Pager(
