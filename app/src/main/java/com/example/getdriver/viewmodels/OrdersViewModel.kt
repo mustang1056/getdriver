@@ -29,7 +29,7 @@ class OrdersViewModel @Inject constructor(
      */
 
     @ExperimentalPagingApi
-    val movies: Flow<PagingData<Orders>> =  Pager(
+    val orders: Flow<PagingData<Orders>> =  Pager(
         config = PagingConfig(pageSize = 20),
         remoteMediator = OrderRemoteMediator(
             disneyService,
