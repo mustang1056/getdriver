@@ -33,7 +33,7 @@ class OrdersRepository @Inject constructor(
         page: (Int) -> Unit
     ) = flow {
         // request API network call asynchronously.
-        orderService.getAllRemonts(0)
+        orderService.getAllOrders(0)
             // handle the case when the API request gets a success response.
             .suspendOnSuccess {
                 orderDao.deleteAll()
@@ -61,7 +61,7 @@ class OrdersRepository @Inject constructor(
                 onError: (String) -> Unit,
                 remont: Orders)= flow {
         // request API network call asynchronously.
-        orderService.addRemont(remont)
+        orderService.addOrder(remont)
             // handle the case when the API request gets a success response.
             .suspendOnSuccess {
                 //posterDao.insertAll(data.content)

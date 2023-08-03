@@ -11,19 +11,19 @@ import retrofit2.http.*
 
 interface OrderService {
     @GET("orders")
-    suspend fun getAllRemonts(@Query("page") page: (Int)): ApiResponse<OrderList>
+    suspend fun getAllOrders(@Query("page") page: (Int)): ApiResponse<OrderList>
 
     @GET("orders")
-    suspend fun getAllRemontsTest(@Query("page") page: (Int)): Response<OrderList>
+    suspend fun getAllOrdersTest(@Query("page") page: (Int)): Response<OrderList>
 
     @GET("orders")
-    suspend fun getAllRemont(@Query("page") page:Int) : Response<Orders>
+    suspend fun getAllOrder(@Query("page") page:Int) : Response<Orders>
 
     @GET("order/{id}")
-    suspend fun getRemont(@Path("id") id: Int): Response<Orders>
+    suspend fun getOrder(@Path("id") id: Int): Response<Orders>
 
     @POST("order")
-    suspend fun addRemont(@Body blog: Orders):ApiResponse<OrderList>
+    suspend fun addOrder(@Body blog: Orders):ApiResponse<OrderList>
 
     @Multipart
     @POST("/remont/upload")
