@@ -17,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class OrdersViewModel @Inject constructor(
-    private val disneyService: OrderService,
-    private val posterDao: OrderDao,
+    private val orderService: OrderService,
+    private val orderDao: OrderDao,
     private val db: AppDatabase
 ) : ViewModel() {
     lateinit var clickedItem: Orders
@@ -32,10 +32,10 @@ class OrdersViewModel @Inject constructor(
     val orders: Flow<PagingData<Orders>> =  Pager(
         config = PagingConfig(pageSize = 20),
         remoteMediator = OrderRemoteMediator(
-            disneyService,
+            orderService,
             db
         ),
-        pagingSourceFactory = { posterDao.pagingSource()}).flow
+        pagingSourceFactory = { orderDao.pagingSource()}).flow
 
     fun itemClicked(item: Orders) {
         clickedItem = item
