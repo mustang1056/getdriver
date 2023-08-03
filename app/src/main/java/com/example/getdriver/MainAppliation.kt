@@ -8,7 +8,7 @@ import timber.log.Timber
 @HiltAndroidApp
 class MainApplication : Application() {
 
-    private val MAPKIT_API_KEY = "2296da6d-ba53-468f-817b-ec68e0cb1e2c"
+    private val MAPKIT_API_KEY = " "
 
 
     override fun onCreate() {
